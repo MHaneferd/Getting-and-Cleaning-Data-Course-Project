@@ -77,19 +77,40 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 ###Notes on the original (raw) data 
 In this project I am not using the Inertial Signals provided in the dataset.
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
-
 ##Creating the tidy datafile
 
 ###Guide to create the tidy data file
-Description on how to create the tidy data file (1. download the data, ...)/
+The final tidy data file can be created as followed;
 
-###Cleaning of the data
-Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
+1. Make sure that the libraries dplyr and RCurl is installed. It is required by the tidy script.
+2. source the run_analysis.R script.
+3. The script will create two output .txt files in the data directory of the working directory. The tidy_average_activity_data.txt file is the end result. 
 
-##Description of the variables in the tiny_data.txt file
+###Cleaning of the data, Process steps
+The run_analysis.R script runs trough the following process steps to get the tidy dataset. For a more detailed description please see the readme dcoument here:  [link to the readme document that describes the code in greater detail]()
+
+1. It loads the neccesarry libries (RCurl, dplyr)
+2. It creates a data directory to hold all the raw data and the tidy datafiles.
+3. It downloads the file containing the raw data to the data directory
+4. It unpacks the data in the data directory, creating a new directory (UCI HAR Dataset) with the raw data.
+5. It loads all the datasets into the environment
+6. It merges the train and test datasets into three merged datasets.
+7. It filter out only the mean and standard deviation columns for the dataset.
+8. It lowercase the activity labels to provide more readibillity.
+9. It parse trough the activity records for the dataset and replaces the ID's with the corresponding activity label.
+10. It creates a variable name for the activity column ('activity')
+11. It creates a variable name for the subject column ('subject')
+12. It uses the feature dataset to name the variables in the main dataset.
+13. The main data set variable names are then cleaned a bit (Removing:'()' and '-', capitalize M and S in Mean and Std, and replacing t and f indicator with time and freq. Where it has two names (BodyBody) is replaced with single Body)
+14. It creates a dataframe where it binds togheter the main dataset, the subject and the activity datasets. So all is now connected and tidy.
+15. It writes the tidy dataset to ./data/tidy_activity_data.txt
+16. It verifies that the dataset has been written by reading in into a verification dataset that is displayed.
+17. It calculates the average of each variable for each activity and each subject by using the aggregate function and puts the result in a new aggregated dataframe.
+18. It updates the new dataframe with an average indicator in each column.
+19. It writes the new tidy dataset to ./data/tidy_average_activity_data.txt
+20. It verifies that the dataset has been written by reading in into a verification dataset that is displayed.
+
+##Description of the variables in the tidy_average_activity_data.txt file
 General description of the file including:
  - Dimensions of the dataset
  - Summary of the data
