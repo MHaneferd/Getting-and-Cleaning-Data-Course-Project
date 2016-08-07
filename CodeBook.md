@@ -14,11 +14,11 @@ The goal is to prepare tidy data that can be used for later analysis.
 
 The outcome of the project is:
 
-1. a tidy data set to be uploaded to coursera. *(It will not be included in this Repo, but it can be created with the run_analysis.R script.)*
+1. a tidy data set to be uploaded to Coursera. *(It will not be included in this Repo, but it can be created with the run_analysis.R script.)*
 2. a link to a Github repository with my script for performing the analysis
-3. a code book **(This File)** that describes the variables, the data, and any transformations or work performed to clean up the data
-4. a README.md in the repo with my scripts. This repo explains how all of the scripts work and how they are connected.
-5. a R script called run_analysis.R that does the following
+3. a code book in the repo **(This File)** that describes the variables, the data, and any transformations or work performed to clean up the data
+4. a README.md in the repo. This explains how all of the scripts work and how they are connected.
+5. a R script in the repo called run_analysis.R that does the following
   1. Merges the training and the test sets to create one data set.
   2. Extracts only the measurements on the mean and standard deviation for each measurement.
   3. Uses descriptive activity names to name the activities in the data set
