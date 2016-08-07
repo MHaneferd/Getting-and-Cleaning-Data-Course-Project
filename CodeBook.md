@@ -2,9 +2,6 @@
 title: "Codebook for the Getting and Cleaning Data Course Project at Coursera"
 author: "Martin Haneferd"
 date: "07. aug. 2016"
-output:
-  html_document:
-    keep_md: yes
 ---
 
 ## Project Description
@@ -87,7 +84,7 @@ The final tidy data file can be created as followed;
 3. The script will create two output .txt files in the data directory of the working directory. The tidy_average_activity_data.txt file is the end result. 
 
 ###Cleaning of the data, Process steps
-The run_analysis.R script runs trough the following process steps to get the tidy dataset. For a more detailed description please see the readme dcoument here:  [link to the readme document that describes the code in greater detail]()
+The run_analysis.R script runs trough the following process steps to get the tidy dataset. For a more detailed description please see the readme dcoument here:  [link to the readme document that describes the code in greater detail](https://github.com/MHaneferd/Getting-and-Cleaning-Data-Course-Project/blob/master/README.md)
 
 1. It loads the neccesarry libries (RCurl, dplyr)
 2. It creates a data directory to hold all the raw data and the tidy datafiles.
