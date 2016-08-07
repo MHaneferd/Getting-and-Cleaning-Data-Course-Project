@@ -111,29 +111,175 @@ The run_analysis.R script runs trough the following process steps to get the tid
 20. It verifies that the dataset has been written by reading in into a verification dataset that is displayed.
 
 ##Description of the variables in the tidy_average_activity_data.txt file
-General description of the file including:
- - Dimensions of the dataset
- - Summary of the data
- - Variables present in the dataset
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+The dataset contains 180 observations of  68 variables
+1 integer variable containg the subjects.
+1 factor variable containing the activity type.
+66 numeric float variables containg the average measured data from the samsung unit.
 
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
+The summary of the data indicates that all subjects (30) are performing all the activities (6). That sums up to 180 observations.
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
+####Variables in the dataset
 
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
+**subject**
+Identifies the unique subject the variables relates to
+- class integer
+- units 1 to 30
 
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
+**Activity**
+Identifies the activity type the subjects has performed.
+- class Factor with 6 levels containing:
+  - walking
+  - walking_upstairs
+  - walking_downstairs
+  - sitting
+  - standing
+  - laying
+
+The variables below are the average of the measurement for each subject and activity. 
+The variable has an initial average in the variable name.
+All values are floating point numbers, ranging between -1 to 1
+class numeric.
+The variables is natural grouped.
+They are also decribed in the features_info.txt file in the Samsung dataset.
+
+**Average time body acceleration mean along X, Y, Z axis**
+- averageTimeBodyAccMeanX
+- averageTimeBodyAccMeanY
+- averageTimeBodyAccMeanZ
+
+**Average time body acceleration standard deviation along X, Y, Z axis**
+- averageTimeBodyAccStdX
+- averageTimeBodyAccStdY
+- averageTimeBodyAccStdZ
+
+**Average time gravity acceleration mean along X, Y, Z axis**
+- averageTimeGravityAccMeanX
+- averageTimeGravityAccMeanY
+- averageTimeGravityAccMeanZ
+
+**Average time gravity acceleration standard deviation along X, Y, Z axis**
+- averageTimeGravityAccStdX
+- averageTimeGravityAccStdY
+- averageTimeGravityAccStdZ
+
+**Average time body acceleration jerk mean along X, Y, Z axis**
+- averageTimeBodyAccJerkMeanX
+- averageTimeBodyAccJerkMeanY
+- averageTimeBodyAccJerkMeanZ
+
+**Average time body acceleration jerk standard deviation along X, Y, Z axis**
+- averageTimeBodyAccJerkStdX
+- averageTimeBodyAccJerkStdY
+- averageTimeBodyAccJerkStdZ
+
+**Average time body gyroscope mean along X, Y, Z axis**
+- averageTimeBodyGyroMeanX
+- averageTimeBodyGyroMeanY
+- averageTimeBodyGyroMeanZ
+
+**Average time body gyroscope standard deviation along X, Y, Z axis**
+- averageTimeBodyGyroStdX
+- averageTimeBodyGyroStdY
+- averageTimeBodyGyroStdZ
+
+**Average time body gyroscope jerk mean along X, Y, Z axis**
+- averageTimeBodyGyroJerkMeanX
+- averageTimeBodyGyroJerkMeanY
+- averageTimeBodyGyroJerkMeanZ
+
+**Average time body gyroscope jerk standard deviation along X, Y, Z axis**
+- averageTimeBodyGyroJerkStdX
+- averageTimeBodyGyroJerkStdY
+- averageTimeBodyGyroJerkStdZ
+
+**Average time body acceleration magnitude mean**
+- averageTimeBodyAccMagMean
+
+**Average time body acceleration magnitude standard deviation**
+- averageTimeBodyAccMagStd
+
+**Average time gravity acceleration magnitude mean**
+- averageTimeGravityAccMagMean
+
+**Average time gravity acceleration magnitude standard deviation**
+- averageTimeGravityAccMagStd
+
+**Average time body acceleration jerk magnitude mean**
+- averageTimeBodyAccJerkMagMean
+
+**Average time body acceleration jerk magnitude standard deviation**
+- averageTimeBodyAccJerkMagStd
+
+**Average time body gyroscope magnitude mean**
+- averageTimeBodyGyroMagMean
+
+**Average time body gyroscope magnitude standard deviation**
+- averageTimeBodyGyroMagStd
+
+**Average time body gyroscope jerk magnitude mean**
+- averageTimeBodyGyroJerkMagMean
+
+**Average time body gyroscope jerk magnitude standard deviation**
+- averageTimeBodyGyroJerkMagStd
+
+**Average frequency body acceleration mean along X, Y, Z axis**
+- averageFreqBodyAccMeanX
+- averageFreqBodyAccMeanY
+- averageFreqBodyAccMeanZ
+
+**Average frequency body acceleration standard deviation along X, Y, Z axis**
+- averageFreqBodyAccStdX
+- averageFreqBodyAccStdY
+- averageFreqBodyAccStdZ
+
+**Average frequency body acceleration jerk mean along X, Y, Z axis**
+- averageFreqBodyAccJerkMeanX
+- averageFreqBodyAccJerkMeanY
+- averageFreqBodyAccJerkMeanZ
+
+**Average frequency body acceleration jerk standard deviation along X, Y, Z axis**
+- averageFreqBodyAccJerkStdX
+- averageFreqBodyAccJerkStdY
+- averageFreqBodyAccJerkStdZ
+
+**Average frequency body gyroscope mean along X, Y, Z axis**
+- averageFreqBodyGyroMeanX
+- averageFreqBodyGyroMeanY
+- averageFreqBodyGyroMeanZ
+
+**Average frequency body gyroscope standard deviation along X, Y, Z axis**
+- averageFreqBodyGyroStdX
+- averageFreqBodyGyroStdY
+- averageFreqBodyGyroStdZ
+
+**Average frequency body acceleration magnitude mean**
+- averageFreqBodyAccMagMean
+
+**Average frequency body acceleration magnitude standard deviation**
+- averageFreqBodyAccMagStd
+
+**Average frequency body acceleration jerk magnitude mean**
+- averageFreqBodyAccJerkMagMean
+
+**Average frequency body acceleration jerk magnitude standard deviation**
+- averageFreqBodyAccJerkMagStd
+
+**Average frequency body gyroscope magnitude mean**
+- averageFreqBodyGyroMagMean
+
+**Average frequency body gyroscope magnitude standard deviation**
+- averageFreqBodyGyroMagStd
+
+**Average frequency body gyroscope jerk magnitude mean**
+- averageFreqBodyGyroJerkMagMean
+
+**Average frequency body gyroscope jerk magnitude standard deviation**
+- averageFreqBodyGyroJerkMagStd
 
 ##Sources
-Sources you used if any, otherise leave out.
+- README.txt from the UCI HAR Dataset
+- features_info.txt from the UCI HAR Dataset
+- The codebook template mentioned in the Coursera forum: https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41
+- The infamous and much celebrated post by David Hood: https://thoughtfulbloke.wordpress.com/2015/09/09/
 
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
