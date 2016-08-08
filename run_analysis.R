@@ -52,18 +52,15 @@ library(dplyr)
 # Download and unpack the data for the project
 #------------------------------------------------------------------------------
 
-# Create data directory for all the data files.
-if(!file.exists("./data")){ dir.create("./data") }
-
 # Download the zipped files containing datasets
-zipfile="./data/projectfiles.zip"
-if(!file.exists("./data/projectfiles.zip")){
+zipfile="./projectfiles.zip"
+if(!file.exists("./projectfiles.zip")){
       fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
       download.file(fileUrl, destfile=zipfile, method="libcurl")
 }
 
 # Unpack files to data directory
-unzip(zipfile, exdir = "./data")
+unzip(zipfile)
 
 # Clean up unneccesary values from environment:
 rm(fileUrl)
@@ -73,28 +70,28 @@ rm(zipfile)
 # Read the datasets 
 #------------------------------------------------------------------------------
 
-trainRecords <- read.table("./data/UCI HAR Dataset/train/X_train.txt")
+trainRecords <- read.table("./UCI HAR Dataset/train/X_train.txt")
 str(trainRecords) # data.frame':	7352 obs. of  561 variables
 
-trainLabels <- read.table("./data/UCI HAR Dataset/train/y_train.txt")
+trainLabels <- read.table("./UCI HAR Dataset/train/y_train.txt")
 str(trainLabels) # data.frame':	7352 obs. of  1 variable
 
-trainSubject <- read.table("./data/UCI HAR Dataset/train/subject_train.txt")
+trainSubject <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 str(trainSubject) # data.frame':	7352 obs. of  1 variable
 
-testRecords <- read.table("./data/UCI HAR Dataset/test/X_test.txt")
+testRecords <- read.table("./UCI HAR Dataset/test/X_test.txt")
 str(testRecords) # 'data.frame':	2947 obs. of  561 variables
 
-testLabels <- read.table("./data/UCI HAR Dataset/test/y_test.txt") 
+testLabels <- read.table("./UCI HAR Dataset/test/y_test.txt") 
 str(testLabels) # 'data.frame':	2947 obs. of  1 variable
 
-testSubject <- read.table("./data/UCI HAR Dataset/test/subject_test.txt")
+testSubject <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 str(testLabels) # 'data.frame':	2947 obs. of  1 variable
 
-features <- read.table("./data/UCI HAR Dataset/features.txt")
+features <- read.table("./UCI HAR Dataset/features.txt")
 str(features) # 'data.frame':	561 obs. of  2 variables
 
-activityLabels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
+activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 str(activityLabels) # 'data.frame':	6 obs. of  2 variables
 
 
@@ -220,12 +217,12 @@ rm(mergeSubject)
 
 
 # Write the Tidy dataset to disk in the current data directory
-write.table(tidyActivityData, "./data/tidy_activity_data.txt", row.names = FALSE) 
+write.table(tidyActivityData, "./tidy_activity_data.txt", row.names = FALSE) 
 
 #------------------------------------------------------------------------------
 # Verify that the saving of the data set is succsessful, and it can be read.
 #------------------------------------------------------------------------------
-verifyTidyActivityData <- read.table("./data/tidy_activity_data.txt", header=TRUE)
+verifyTidyActivityData <- read.table("./tidy_activity_data.txt", header=TRUE)
 str(verifyTidyActivityData) # 'data.frame':	10299 obs. of  68 variables
 View(verifyTidyActivityData)
 # Remove the verification dataset from memory:
@@ -261,7 +258,7 @@ names(newTidyDataset) <- gsub("^time", "averageTime", names(newTidyDataset))
 names(newTidyDataset) <- gsub("^freq", "averageFreq", names(newTidyDataset))
 
 # Write the new tidy dataset to disk in the current data directory
-write.table(newTidyDataset, "./data/tidy_average_activity_data.txt", row.names = FALSE) 
+write.table(newTidyDataset, "./tidy_average_activity_data.txt", row.names = FALSE) 
 
 
 # Remove the tidy dataset from memory
@@ -270,7 +267,7 @@ rm(newTidyDataset)
 #------------------------------------------------------------------------------
 # Verify that the saving of the data set is succsessful, and it can be read.
 #------------------------------------------------------------------------------
-verifyTidyAverageData <- read.table("./data/tidy_average_activity_data.txt", header=TRUE)
+verifyTidyAverageData <- read.table("./tidy_average_activity_data.txt", header=TRUE)
 str(verifyTidyAverageData) # data.frame':	180 obs. of  68 variables:
 View(verifyTidyAverageData)
 # Remove the verification dataset from memory:
