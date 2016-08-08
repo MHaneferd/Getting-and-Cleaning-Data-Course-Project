@@ -49,7 +49,7 @@ The dataset includes the following files, which I use in this project:
 - 'test/y_test.txt': Test labels.
 - 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
-###The logic of the Raw datafiles is as followed:
+###The Raw datafiles is connected to each other as followed:
 
 1. The X_ files has the accleometer, gyro, etc. variables. ( No header, only a lot of values)
 2. The y_ files has the activity types (connected 1:1) for each rows in the X_ files. The activity type is a value identifier (1 - 6). The values for the identifier is in the activity_labels file.
