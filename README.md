@@ -22,6 +22,7 @@ At the end of the CodeBook, the major sources for where the information of how I
 
 ###[run_analysis.R](https://github.com/MHaneferd/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
 The run_analysis script is the script that downloads the raw dataset, and produces a tidy file for further analysis. The tidy file is the one that is uploaded to Coursera as decribed in the assignment.
+The script is written with many comments to ease the understanding of the operations.
 
 The script was made in RStudio Version 0.99.903, and Windows-8 Operating system.
 It can be executed by the following command in R- (If you have the script in another working directory, you must either change the working directory to the script file, or put in the directory path in the source command:
