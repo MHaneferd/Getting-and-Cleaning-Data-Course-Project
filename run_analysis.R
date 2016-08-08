@@ -220,7 +220,7 @@ rm(mergeSubject)
 
 
 # Write the Tidy dataset to disk in the current data directory
-write.table(tidyActivityData, "./data/tidy_activity_data.txt") 
+write.table(tidyActivityData, "./data/tidy_activity_data.txt", row.names = FALSE) 
 
 #------------------------------------------------------------------------------
 # Verify that the saving of the data set is succsessful, and it can be read.
@@ -261,7 +261,7 @@ names(newTidyDataset) <- gsub("^time", "averageTime", names(newTidyDataset))
 names(newTidyDataset) <- gsub("^freq", "averageFreq", names(newTidyDataset))
 
 # Write the new tidy dataset to disk in the current data directory
-write.table(newTidyDataset, "./data/tidy_average_activity_data.txt") 
+write.table(newTidyDataset, "./data/tidy_average_activity_data.txt", row.names = FALSE) 
 
 
 # Remove the tidy dataset from memory
