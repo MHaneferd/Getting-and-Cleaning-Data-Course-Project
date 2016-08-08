@@ -59,7 +59,7 @@ The dataset includes the following files, which I use in this project:
 6. The activity_labels file is connected to the identifiers in the y_files, and can replace the identifier in y_files with text for the activity ( standing, walking_, etc.) 
 
 ###Collection of the raw data
-The collection of the .zip file in the project is downloaded by my R-script, run_analysis.R. It is downlodaded and unpacked in a data directory.
+The collection of the .zip file in the project is downloaded by my R-script, run_analysis.R. It is downlodaded and unpacked in the working directory.
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
@@ -81,15 +81,14 @@ The final tidy data file can be created as followed;
 
 1. Make sure that the libraries dplyr and RCurl is installed. It is required by the tidy script.
 2. source the run_analysis.R script.
-3. The script will create two output .txt files in the data directory of the working directory. The tidy_average_activity_data.txt file is the end result. 
+3. The script will create two output .txt files in the working directory directory of the working directory. The tidy_average_activity_data.txt file is the end result. 
 
 ###Cleaning of the data, Process steps
 The run_analysis.R script runs trough the following process steps to get the tidy dataset. For a more detailed description please see the readme dcoument here:  [link to the readme document that describes the code in greater detail](https://github.com/MHaneferd/Getting-and-Cleaning-Data-Course-Project/blob/master/README.md)
 
 1. It loads the neccesarry libries (RCurl, dplyr)
-2. It creates a data directory to hold all the raw data and the tidy datafiles.
-3. It downloads the file containing the raw data to the data directory
-4. It unpacks the data in the data directory, creating a new directory (UCI HAR Dataset) with the raw data.
+3. It downloads the file containing the raw data to the working directory
+4. It unpacks the data in the working directory, creating a new directory (UCI HAR Dataset) with the raw data.
 5. It loads all the datasets into the environment
 6. It merges the train and test datasets into three merged datasets.
 7. It filter out only the mean and standard deviation columns for the dataset.
@@ -100,11 +99,11 @@ The run_analysis.R script runs trough the following process steps to get the tid
 12. It uses the feature dataset to name the variables in the main dataset.
 13. The main data set variable names are then cleaned a bit (Removing:'()' and '-', capitalize M and S in Mean and Std, and replacing t and f indicator with time and freq. Where it has two names (BodyBody) is replaced with single Body)
 14. It creates a dataframe where it binds togheter the main dataset, the subject and the activity datasets. So all is now connected and tidy.
-15. It writes the tidy dataset to ./data/tidy_activity_data.txt
+15. It writes the tidy dataset to tidy_activity_data.txt
 16. It verifies that the dataset has been written by reading in into a verification dataset that is displayed.
 17. It calculates the average of each variable for each activity and each subject by using the aggregate function and puts the result in a new aggregated dataframe.
 18. It updates the new dataframe with an average indicator in each column.
-19. It writes the new tidy dataset to ./data/tidy_average_activity_data.txt
+19. It writes the new tidy dataset to tidy_average_activity_data.txt
 20. It verifies that the dataset has been written by reading in into a verification dataset that is displayed.
 
 ##Description of the variables in the tidy_average_activity_data.txt file
