@@ -64,7 +64,7 @@ I sort the tidy dataset by the **arrange** command with subject as a column:
 
 The variable names are also updated with 'average' in front of Time and Freq to indicate that it consists of the average (mean) values.
 The new tidy dataset is then saved to disk with the **write.table** command:
->write.table(newTidyDataset, "./data/tidy_average_activity_data.txt")
+>write.table(newTidyDataset, "./data/tidy_average_activity_data.txt", row.names = FALSE)
 
 Then I test the writing of the dataset, by loading it into R, and view it.
 
