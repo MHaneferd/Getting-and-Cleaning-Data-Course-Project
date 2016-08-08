@@ -24,6 +24,12 @@ At the end of the CodeBook, the major sources for where the information of how I
 The run_analysis script is the script that downloads the raw dataset, and produces a tidy file for further analysis. The tidy file is the one that is uploaded to Coursera as decribed in the assignment.
 
 The script was made in RStudio Version 0.99.903, and Windows-8 Operating system.
+It can be executed by the following command in R- (If you have the script in another working directory, you must either change the working directory to the script file, or put in the directory path in the source command:
+>source("run_analysis.R")
+
+It will create a data directory under the working directory and place the tidy dataset files there.
+It is the tidy_average_activity_data.txt that is the deliverable to Coursera.
+
 It has been tested in both RStudio and the R-console Version: x64 3.3.1
 Note: I have seen in the discussion forums some different ways of downloading files depending on which operating syste R- is running on. I needed to use RCurl for my download to happend. If you try to use this script on other configuration/operating system than Windows, you might have to change some of the download code so it fit's your configuration. The download code is in line 62 of the script:
 >download.file(fileUrl, destfile=zipfile, method="libcurl")
@@ -60,3 +66,6 @@ The new tidy dataset is then saved to disk with the **write.table** command:
 >write.table(newTidyDataset, "./data/tidy_average_activity_data.txt")
 
 Then I test the writing of the dataset, by loading it into R, and view it.
+
+###tidy_average_activity_data.txt
+This is the output file of the run_analysis.R script that is uploaded to Coursera as a part of the project assignment. It is not added in this Repo. You have to source the run_analysis.R script to get hold of it if needed.
