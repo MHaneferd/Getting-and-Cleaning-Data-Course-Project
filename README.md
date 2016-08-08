@@ -20,8 +20,9 @@ It includes some study design and data processing of the raw data, how it is col
 There is a section of a guide for how to create the Tidy Dataset (Which are uploaded to Coursera), and a process description on how the raw data files are cleaned. And a description of the variables in the output file (The tidy_average_activity_data.txt file.)
 At the end of the CodeBook, the major sources for where the information of how I got to the end result are listed.
 
-###run_analysis.R
+###[run_analysis.R](https://github.com/MHaneferd/Getting-and-Cleaning-Data-Course-Project/blob/master/run_analysis.R)
 The run_analysis script is the script that downloads the raw dataset, and produces a tidy file for further analysis. The tidy file is the one that is uploaded to Coursera as decribed in the assignment.
+The script is written with many comments to ease the understanding of the operations.
 
 The script was made in RStudio Version 0.99.903, and Windows-8 Operating system.
 It can be executed by the following command in R- (If you have the script in another working directory, you must either change the working directory to the script file, or put in the directory path in the source command:
@@ -31,7 +32,7 @@ It will create a data directory under the working directory and place the tidy d
 It is the tidy_average_activity_data.txt that is the deliverable to Coursera.
 
 It has been tested in both RStudio and the R-console Version: x64 3.3.1
-Note: I have seen in the discussion forums some different ways of downloading files depending on which operating syste R- is running on. I needed to use RCurl for my download to happend. If you try to use this script on other configuration/operating system than Windows, you might have to change some of the download code so it fit's your configuration. The download code is in line 62 of the script:
+**Note:** I have seen in the discussion forums some different ways of downloading files depending on which operating syste R- is running on. I needed to use RCurl for my download to happend. If you try to use this script on other configuration/operating system than Windows, you might have to change some of the download code so it fit's your configuration. The download code is in line 62 of the script:
 >download.file(fileUrl, destfile=zipfile, method="libcurl")
 
 The script follow a linear order by using the suggested process steps in the project instructions from Coursera.
